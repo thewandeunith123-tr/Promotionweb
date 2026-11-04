@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magma Video Promotion</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080808;color:#fff}
+header{padding:20px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
+.logo{font-size:25px;font-weight:bold;letter-spacing:2px}.logo span{color:#888}
+nav a{color:#ccc;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{text-align:center;padding:100px 20px}
+.hero h1{font-size:48px;margin-bottom:20px}.hero p{color:#aaa;font-size:17px;margin-bottom:30px}
+.btn{display:inline-block;background:#fff;color:#000;padding:14px 25px;text-decoration:none;border-radius:5px;font-weight:bold}
+section{padding:60px 8%;text-align:center}h2{font-size:30px;margin-bottom:35px}
+.packages,.stats,.videos{display:flex;justify-content:center;gap:25px;flex-wrap:wrap}
+.card{background:#151515;border:1px solid #333;border-radius:12px;padding:35px;width:280px}
+.card h3{font-size:22px;margin-bottom:15px}.price{font-size:32px;font-weight:bold;margin:20px 0}
+.card p{color:#aaa;margin-bottom:25px}.video{width:325px;max-width:100%}
+.video iframe{width:100%;height:580px;border:0;border-radius:12px}
+.note{color:#888;font-size:14px;line-height:1.6;margin:18px auto;max-width:700px}
+footer{padding:30px;text-align:center;border-top:1px solid #222;color:#888}
+@media(max-width:600px){.hero h1{font-size:35px}header{padding:20px 5%;flex-wrap:wrap;gap:15px}nav a{margin-left:10px}section{padding:50px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">MAGMA<span>.</span></div>
+  <nav><a href="#packages">Packages</a><a href="#videos">Videos</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="hero">
+  <h1>Grow Your Audience</h1>
+  <p>Professional Video Promotion Service</p>
+  <a class="btn" href="#packages">View Packages</a>
+</div>
+
+<section id="stats">
+  <h2>Our TikTok Statistics</h2>
+  <div class="stats">
+    <div class="card"><h3>Followers</h3><div class="price">Visit TikTok</div></div>
+    <div class="card"><h3>Total Likes</h3><div class="price">Visit TikTok</div></div>
+    <div class="card"><h3>Total Videos</h3><div class="price">Visit TikTok</div></div>
+  </div>
+  <p class="note">Live statistics are not connected yet. Visit our TikTok profile for the latest numbers.</p>
+  <a class="btn" href="https://www.tiktok.com/@magma1_" target="_blank" rel="noopener">View TikTok Profile</a>
+</section>
+
+<section id="packages">
+  <h2>Our Packages</h2>
+  <div class="packages">
+    <div class="card"><h3>Single Video</h3><div class="price">Rs. 600</div><p>Promotion for 1 video</p>
+      <a class="btn" href="https://wa.me/94775407644?text=I%20want%20the%20Single%20Video%20Package">Order Now</a>
+    </div>
+    <div class="card"><h3>Monthly Package</h3><div class="price">Rs. 18,000</div><p>Promotion for 30 videos</p>
+      <a class="btn" href="https://wa.me/94775407644?text=I%20want%20the%20Monthly%20Package">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <h2>Our TikTok Videos</h2>
+  <p class="note">Add your TikTok video IDs in the list below to show them here.</p>
+  <div class="videos" id="videoContainer"></div>
+  <a class="btn" style="margin-top:30px" href="https://www.tiktok.com/@magma1_" target="_blank" rel="noopener">See More Videos</a>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p style="color:#aaa;margin-bottom:25px">Ready to promote your videos?</p>
+  <a class="btn" href="https://wa.me/94775407644">WhatsApp Us</a>
+</section>
+
+<footer>© 2026 Magma Video Promotion. All Rights Reserved.</footer>
+
+<script>
+// Replace these example entries with the numbers after /video/ in your TikTok video links.
+const videoIDs = [
+  "PASTE_VIDEO_ID_HERE",
+  "PASTE_VIDEO_ID_HERE",
+  "PASTE_VIDEO_ID_HERE"
+];
+const container = document.getElementById("videoContainer");
+videoIDs.filter(id => id && id !== "PASTE_VIDEO_ID_HERE").forEach(id => {
+  const item = document.createElement("div");
+  item.className = "video";
+  const frame = document.createElement("iframe");
+  frame.src = "https://www.tiktok.com/embed/v2/" + encodeURIComponent(id);
+  frame.title = "TikTok video";
+  frame.loading = "lazy";
+  frame.allowFullscreen = true;
+  item.appendChild(frame);
+  container.appendChild(item);
+});
+</script>
+</body>
+</html>
